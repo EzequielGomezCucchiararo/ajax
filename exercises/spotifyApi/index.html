@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+      .hidden { display: none; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+        <!--     <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="#">About</a></li>
+                    <li role="presentation"><a href="#">Contact</a></li>
+                </ul>
+            </nav> -->
+            <h3 class="text-muted">Spotify Finder 😎</h3>
+        </div>
+        <div class="jumbotron" id="search-artists">
+            <h3>Search for an artist...</h3>
+            <form id="sArtist" action="" method="POST" class="form-inline" role="form">
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="Input artist name...">
+              </div>
+                          <button type="submit" class="btn btn-primary">Search</button>
+
+            </form>
+        </div>
+
+
+        <div class="jumbotron hidden" id="select-artist">
+            <h3>Select an artist...</h3>
+            <form id="lArtist" action="" method="POST" class="form-inline" role="form">
+
+              <div class="form-group">
+                <select name="" class="form-control" id="list-artists"></select>
+              </div>
+            </form>
+        </div>
+
+        <div class="jumbotron hidden" id="select-album">
+            <h3>Select an album...</h3>
+            <form id="lAlbums" action="" method="POST" class="form-inline" role="form">
+
+              <div class="form-group">
+                <select name="" class="form-control" id="list-albums"></select>
+              </div>
+            </form>
+        </div>
+
+        <div class="jumbotron hidden" id="select-tracks">
+            <h3>Select a track...</h3>
+            <ul id="lTracks">
+            </ul>
+        </div>
+
+        <div class="hidden" id="trackPreview">
+          <audio src="" controls >
+            <a href=""></a>
+          </audio>
+        </div>
+       
+
+        <footer class="footer">
+            <p>&copy; 2016 Company, Inc.</p>
+        </footer>
+    </div>
+    <!-- /container -->
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <!-- Latest compiled and minified JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
