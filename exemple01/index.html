@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax call Api GitHub Respos</title>
+</head>
+<body>
+
+    <input type="text" id="username">
+    <button id="click-me">Click Me!!</button>
+    <ul id="listRepos"></ul>
+
+    <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script>
+
+      $("#click-me").on("click", function() {
+
+        var username = $("#username").val();
+        $.ajax({
+          url: 'https://api.github.com/users/' + username +'/repos'
+        })
+        .done( function( myData ) {
+          var aListReposHtml = myData.map( function(elem) {
+            return '<li>' +  elem.full_name + '</li>'
+          })
+          $("#listRepos").html(aListReposHtml)
+
+        })
+
+      })
+
+    </script>
+</body>
+</html>
