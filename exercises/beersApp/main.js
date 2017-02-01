@@ -37,6 +37,7 @@ $('#sBeer').on('submit', function (e) {
   var beerSheet = '' +
     '<div class="col-sm-6 col-md-6">' +
       '<div class="thumbnail">' +
+        '<img class="img-responsive" src="<%IMG%>" alt="...">' +
         '<div class="caption">' +
           '<h3><%NAME%></h3>' +
           '<p><strong>Type: </strong><%TYPE%></p>' +
@@ -44,6 +45,7 @@ $('#sBeer').on('submit', function (e) {
       '</div>' +
     '</div>'
 
+  var mainImg
   $.ajax({
     url: urlFilled
   })
@@ -54,8 +56,9 @@ $('#sBeer').on('submit', function (e) {
     var beersElem = listBeers.map(function (elem) {
       return beerSheet.replace('<%NAME%>', elem.name).replace('<%TYPE%>', elem.type)
     })
-    $('#list-beers').html(beersElem.join(''))
-    $('.caption').css('backgroundColor', '#e3ffc7')
+    console.log(mainImg)
+    beersElem = beersElem.join('').replace(/<%IMG%>/g, response[0].images.medium)
+    $('#list-beers').html(beersElem)
   })
 })
 
